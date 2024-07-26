@@ -1,7 +1,7 @@
-import Fin5 from '../../../../assets/fin5.png'
+import Fin5 from '../../../assets/fin5.png'
 import { FC } from "react"
 
-export const LoginHeader: FC = () => {
+export const AuthHeader: FC = () => {
   return (
     <div className='flex flex-col items-center space-y-4 pt-12 pb-8'>
       <img src={Fin5} style={{ width: 75, height: 75 }} alt={''} />

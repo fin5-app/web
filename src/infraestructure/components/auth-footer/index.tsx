@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FC } from 'react'
 
-export const LoginFooter: FC = () => {
+export const AuthFooter: FC = () => {
   return (
     <div className='grid grid-cols-3 p-4 w-[220px] my-5'>
       <Link to={'#!'} className='text-xs text-text-secondary'>

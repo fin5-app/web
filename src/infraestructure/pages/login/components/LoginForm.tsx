@@ -4,7 +4,7 @@ import { Button } from '../../../components/button/index';
 import { useLoginController } from "../controller";
 
 export const LoginForm: FC = () => {
-  const { handleBlur, handleChange, handleSubmit, values, isPending} = useLoginController();
+  const { handleNavigateToRegisterPage, handleBlur, handleChange, handleSubmit, values, isPending} = useLoginController();
   return (
     <div className='bg-secondary-100 border-borderPrimary-100 border-[1px] p-4 rounded-md space-y-4 w-[320px]'>
       <div className='space-y-2'>
@@ -39,9 +39,8 @@ export const LoginForm: FC = () => {
         />
       </div>
       <div className='space-y-4 flex flex-col py-2'>
-        {/* // set loading in button */}
         <Button variant='primary' text='Iniciar Sesión' isLoading={isPending} onClick={handleSubmit} />
-        <Button variant='secondary' text='Regístrate' />
+        <Button variant='secondary' text='Regístrate' onClick={handleNavigateToRegisterPage} />
       </div>
     </div>
   )
