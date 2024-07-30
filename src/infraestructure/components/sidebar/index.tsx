@@ -1,9 +1,7 @@
 import Fin5 from '../../../assets/fin5.png'
 import DashboardIcon from '../../../assets/layout-dashboard.svg'
-import WalletMinimal from '../../../assets/wallet-minimal.svg'
 import TransactionIcon from '../../../assets/arrow-right-left.svg'
 import SidebarItem from './sidebar-item';
-// import SidebarUserItem from './sidebar-user-item';
 import { MobileMenu } from './mobile-menu'
 import { FC } from 'react'
 import { SidebarDollarBlue } from './sidebar-dollar-blue';
@@ -15,7 +13,6 @@ export interface SidebarItemProps {
     url: string;
     icon: JSX.Element;
 }
-
 
 const SidebarItems: SidebarItemProps[] = [
     {
@@ -30,15 +27,7 @@ const SidebarItems: SidebarItemProps[] = [
         url: '/transactions',
         icon: <TransactionIcon style={{ width: 20, height: 20 }} className='text-text-primary' />,
     },
-    {
-        id: '3',
-        name: 'Facturación',
-        url: '/billing',
-        icon: <WalletMinimal style={{ width: 20, height: 20 }} className='text-text-primary' />
-    }
 ]
-
-
 
 export const Sidebar: FC = () => {
     return (

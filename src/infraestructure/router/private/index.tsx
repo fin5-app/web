@@ -12,7 +12,6 @@ export const PrivateRouter: FC = () => {
                 <Routes>
                     <Route path='/dashboard' element={<DashboardPage />} />
                     <Route path='/transactions' element={<TransactionsPage />} />
-                    <Route path='/dashboard' element={<DashboardPage />} />
                     <Route path='/*' element={<Navigate to="/dashboard" />} />
                 </Routes>
             </PrivateLayout>
