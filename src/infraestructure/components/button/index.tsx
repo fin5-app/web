@@ -5,13 +5,14 @@ interface ButtonProps {
   variant: 'primary' | 'secondary';
   onClick?: () => void;
   isLoading?: boolean;
+  type?: "button" | "submit" | 'reset' 
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { text, variant, onClick, isLoading } = props;
+  const { text, variant, onClick, isLoading, type = "button" } = props;
   if (variant === 'primary') {
     return (
-      <button onClick={onClick} className='bg-button-primary py-[5px] px-4 text-white font-normal text-sm rounded-md w-full'>
+      <button onClick={onClick} className='bg-button-primary py-[5px] px-4 text-white font-normal text-sm rounded-md w-full' type={type}>
         {
           isLoading ?
             <div className="flex w-full items-center justify-center space-x-2">
@@ -33,7 +34,7 @@ export const Button: FC<ButtonProps> = (props) => {
   }
   else {
     return (
-      <button onClick={onClick} className='border-[1px] border-borderPrimary-100 py-[5px] px-4 text-white font-normal text-sm rounded-md w-full'>{text}</button>
+      <button onClick={onClick} className='border-[1px] border-borderPrimary-100 py-[5px] px-4 text-white font-normal text-sm rounded-md w-full' type={type}>{text}</button>
     )
   }
 }
