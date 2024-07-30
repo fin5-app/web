@@ -25,7 +25,7 @@ export const ForgotPasswordForm: FC = () => {
       </div>
 
       <div className='space-y-4 flex flex-col py-2'>
-        <Button variant='primary' text='Recuperar contraseña' onClick={handleSubmit} type="submit"/>
+        <Button variant='primary' text='Recuperar contraseña' onClick={handleSubmit} />
         <Button variant='secondary' text='Volver' onClick={handleNavigateToLoginPage} />
       </div>
     </div>
