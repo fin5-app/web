@@ -4,8 +4,9 @@ import MinusIcon from '../../../../assets/minus.svg';
 import { formatCurrency } from "../../../utils/currency";
 import { TransactionTypes } from '../../../../domain/models/TransactionType';
 import { Transaction } from '../../../../domain/models/Transaction';
+import EmptyIlustration from '../../../../assets/empty-ilustration.svg'
 
-interface LatestTransactions{
+interface LatestTransactions {
     transactions?: Transaction[]
 }
 
@@ -28,44 +29,54 @@ interface TableProps {
 function Table(props: TableProps) {
     const { latestTransactions } = props;
     return (
-        <div className="flex flex-col gap-5 p-3">
+        <div className="flex flex-col gap-5 p-3 min-h-[15rem]">
             {
-                latestTransactions?.map((item) => (
-                    <div key={item.id} className="grid grid-cols-4 w-full items-center">
-                        <div className="flex-1 flex space-x-2 md:space-x-4 items-center col-span-3">
-                            <div className="rounded-md bg-primary-100 w-12 h-12 relative flex items-center justify-center">
-                                {
-                                    item.type.name === TransactionTypes.EXPENSE ?
-                                        <MinusIcon className="absolute w-3 h-3 top-1 right-1 text-error-100" style={{ strokeWidth: 5 }} />
-                                        :
-                                        <PlusIcon className="absolute w-3 h-3 top-1 right-1 text-success-100" style={{ strokeWidth: 5 }} />
-                                }
-                                <ExpenseTypeIcon className="h-4 w-4 text-text-secondary" />
+                !latestTransactions || latestTransactions.length === 0 ?
+                    <div className="w-full flex items-center flex-col">
+                        <div className='relative'>
+                            <EmptyIlustration className='text-text-primary absolute' />
+                            <div className='absolute'>
+                                <p className='text-sm text-text-secondary text-center'>No tienes ninguna transacción registrada en el último mes</p>
                             </div>
-                            <div className="flex-1">
-                                <p className="text-text-primary text-xs md:text-sm font-medium tracking-wide">
-                                    {item.category.name}
-                                </p>
-                                <p className="text-text-secondary text-xs">
-                                    {new Date(item.created).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex gap-1 md:gap-2 justify-end flex-col md:flex-row items-center md:items-start">
-                            <p className="text-text-primary text-xs md:text-sm">
-                                {
-                                    item.type.name === TransactionTypes.EXPENSE ?
-                                        `${formatCurrency(item.amount, 'USD')}`
-                                        :
-                                        `${formatCurrency(item.amount, 'USD')}`
-                                }
-                            </p>
-                            <p className="text-text-primary text-xs md:text-sm">
-                                {item.currency.code}
-                            </p>
                         </div>
                     </div>
-                ))
+                    :
+                    latestTransactions.map((item) => (
+                        <div key={item.id} className="grid grid-cols-4 w-full items-center">
+                            <div className="flex-1 flex space-x-2 md:space-x-4 items-center col-span-3">
+                                <div className="rounded-md bg-primary-100 w-12 h-12 relative flex items-center justify-center">
+                                    {
+                                        item.type.name === TransactionTypes.EXPENSE ?
+                                            <MinusIcon className="absolute w-3 h-3 top-1 right-1 text-error-100" style={{ strokeWidth: 5 }} />
+                                            :
+                                            <PlusIcon className="absolute w-3 h-3 top-1 right-1 text-success-100" style={{ strokeWidth: 5 }} />
+                                    }
+                                    <ExpenseTypeIcon className="h-4 w-4 text-text-secondary" />
+                                </div>
+                                <div className="flex-1">
+                                    <p className="text-text-primary text-xs md:text-sm font-medium tracking-wide">
+                                        {item.category.name}
+                                    </p>
+                                    <p className="text-text-secondary text-xs">
+                                        {new Date(item.created).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex gap-1 md:gap-2 justify-end flex-col md:flex-row items-center md:items-start">
+                                <p className="text-text-primary text-xs md:text-sm">
+                                    {
+                                        item.type.name === TransactionTypes.EXPENSE ?
+                                            `${formatCurrency(item.amount, 'USD')}`
+                                            :
+                                            `${formatCurrency(item.amount, 'USD')}`
+                                    }
+                                </p>
+                                <p className="text-text-primary text-xs md:text-sm">
+                                    {item.currency.code}
+                                </p>
+                            </div>
+                        </div>
+                    ))
             }
         </div>
     )

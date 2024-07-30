@@ -6,3 +6,13 @@ export interface AuthenticateUserResponse {
         email: string
     };
 }
+
+export interface RegisterUserResponse {
+    success: boolean;
+    user: {
+        first_name: string;
+        last_name: string;
+        email: string
+        phone_number: string | null;
+    };
+}

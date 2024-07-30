@@ -4,9 +4,10 @@ import { useAuthStore } from "../../zustand/auth/useAuthStore";
 import { useFormik } from "formik";
 import { REGISTER_FORM_SCHEMA, REGISTER_FORM_VALUES } from "./schema";
 import { useNavigate } from "react-router-dom";
+import { useCreateUser } from "../../hooks/auth/useCreateUser";
 
 export const useRegisterController = () => {
-    // const { mutateAsync: authenticate, isSuccess, data, isPending } = useAuthenticateUser();
+    const { mutateAsync: createUser, isSuccess: isSuccessfullUserCreated, data: createdUser, isPending: isCreatingUser } = useCreateUser();
     // const { login } = useAuthStore();
     const navigate = useNavigate();
     const { errors, handleBlur, handleSubmit, values, handleChange } = useFormik<REGISTER_FORM_VALUES>({
@@ -16,7 +17,7 @@ export const useRegisterController = () => {
     });
 
     const handleSubmitForm: (values: REGISTER_FORM_VALUES) => Promise<void> = async ({ email, password, first_name, last_name }) => {
-        // authenticate({ email, password })
+        createUser({ email, password, first_name, last_name })
     };
 
     const handleNavigateToLoginPage = () => {
@@ -24,10 +25,11 @@ export const useRegisterController = () => {
     }
 
     // useEffect(() => {
-    //     if (data && isSuccess) {
-    //         login(data.user, data.token, true);
+    //     if (createdUser && isSuccessfullUserCreated) {
+    //         // login(data.user, data.token, true);
+    //         authenticate(createdUser.user.email, )
     //     }
-    // }, [data, isSuccess, login])
+    // }, [createdUser, isSuccessfullUserCreated])
 
     return {
         handleSubmit,
