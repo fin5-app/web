@@ -24,7 +24,7 @@ export const LoginForm: FC = () => {
       <div className='space-y-2'>
         <div className='flex justify-between items-center'>
           <label className='text-white text-normal text-sm'>Contraseña</label>
-          <Link to={'#!'} className='underline text-normal text-xs text-blue-600'>¿Olvidaste tu contraseña?</Link>
+          <Link to={'/forgot-password'} className='underline text-normal text-xs text-blue-600'>¿Olvidaste tu contraseña?</Link>
         </div>
         <input
           className="peer block w-full rounded-md border border-borderPrimary-100 py-[5px] px-3 text-sm outline-2 bg-primary-100 text-white"
