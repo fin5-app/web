@@ -4,7 +4,6 @@ import MinusIcon from "../../../../assets/minus.svg";
 import { formatCurrency } from "../../../utils/currency";
 import { TransactionTypes } from "../../../../domain/models/TransactionType";
 import { Transaction } from "../../../../domain/models/Transaction";
-import EmptyIlustration from "../../../../assets/empty-ilustration.svg";
 import { EmptyTransactions } from "./empty-transactions";
 
 interface LatestTransactions {
