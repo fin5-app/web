@@ -1,7 +1,14 @@
-import { Transaction } from "../../models/Transaction";
+import { Transaction } from '../../models/Transaction'
+import { Category } from '../../models/Category'
 
 export interface GetTransactions {
-    success: true;
-    transactions: Transaction[];
-    total_pages: number;
+  success: boolean
+  transactions: Transaction[]
+  total_pages: number
+}
+
+export interface GetTransactionCategories {
+  success: boolean
+  data: Category[]
+  // total_pages: number
 }
