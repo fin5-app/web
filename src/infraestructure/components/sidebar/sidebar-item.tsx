@@ -8,28 +8,19 @@ import './animations.css'
 export default function SidebarItem(props: SidebarItemProps) {
   const { name, url, icon, routes } = props
   const [openRoutes, setOpenRoutes] = useState<boolean>(false)
-  const [isLeaving, setIsLeaving] = useState<boolean>(false)
 
   const { pathname } = useLocation()
 
   const handleOpenRoutes = () => {
-    if (openRoutes) {
-      setIsLeaving(true)
-      setTimeout(() => {
-        setOpenRoutes(false)
-        setIsLeaving(false)
-      }, 500)
-    } else {
-      setOpenRoutes(true)
-    }
+    setOpenRoutes((prevState) => !prevState)
   }
 
   return (
     <>
-      {routes && routes?.length > 0 ? (
+      {routes && routes.length > 0 ? (
         <>
           <div
-            onClick={() => handleOpenRoutes()}
+            onClick={handleOpenRoutes}
             className={`${
               pathname.includes(url)
                 ? 'bg-borderPrimary-100'
@@ -42,7 +33,7 @@ export default function SidebarItem(props: SidebarItemProps) {
                 <p
                   className={`${
                     pathname.includes(url) ? 'font-medium' : 'font-normal'
-                  } text-text-primary text-[0.875rem] leading-[1.5715] -tracking-[0.006rem] ml-2 select-none  `}
+                  } text-text-primary text-[0.875rem] leading-[1.5715] -tracking-[0.006rem] ml-2 select-none`}
                 >
                   {name}
                 </p>
@@ -64,40 +55,36 @@ export default function SidebarItem(props: SidebarItemProps) {
               )}
             </div>
           </div>
-          {(openRoutes || isLeaving) && (
-            <div
-              className={`transition-all duration-300 ease-in-out transform ${
-                openRoutes && !isLeaving ? 'fade-enter fade-enter-active' : ''
-              }
-              ${isLeaving ? 'fade-leave fade-leave-active' : ''}
-              `}
-            >
-              {routes.map((route) => {
-                return (
-                  <Link
-                    to={`${route.url}`}
-                    key={route.id}
+          <div
+            className={`${
+              openRoutes
+                ? 'slide-enter slide-enter-active flex flex-col gap-y-2'
+                : 'slide-exit slide-exit-active flex flex-col gap-y-2'
+            }`}
+          >
+            {routes.map((route) => (
+              <Link
+                to={route.url}
+                key={route.id}
+                className={`${
+                  pathname === route.url
+                    ? 'bg-borderPrimary-100'
+                    : 'hover:bg-borderPrimary-100'
+                } px-2 py-2 flex items-center space-x-2 rounded-[6px] ml-5`}
+              >
+                {route.icon}
+                <div>
+                  <p
                     className={`${
-                      pathname === route.url
-                        ? 'bg-borderPrimary-100'
-                        : 'hover:bg-borderPrimary-100'
-                    } px-2 py-2 flex items-center space-x-2 rounded-[6px] ml-5`}
+                      pathname === route.url ? 'font-medium' : 'font-normal'
+                    } text-text-primary text-[0.875rem] leading-[1.5715] -tracking-[0.006rem] select-none`}
                   >
-                    {route.icon}
-                    <div>
-                      <p
-                        className={`${
-                          pathname === route.url ? 'font-medium' : 'font-normal'
-                        } text-text-primary text-[0.875rem] leading-[1.5715] -tracking-[0.006rem] select-none  `}
-                      >
-                        {route.name}
-                      </p>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          )}
+                    {route.name}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </>
       ) : (
         <Link
@@ -113,7 +100,7 @@ export default function SidebarItem(props: SidebarItemProps) {
             <p
               className={`${
                 pathname === url ? 'font-medium' : 'font-normal'
-              } text-text-primary text-[0.875rem] leading-[1.5715] -tracking-[0.006rem] select-none `}
+              } text-text-primary text-[0.875rem] leading-[1.5715] -tracking-[0.006rem] select-none`}
             >
               {name}
             </p>
