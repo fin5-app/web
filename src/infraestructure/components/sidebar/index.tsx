@@ -16,9 +16,9 @@ export interface SidebarItemProps {
 
 export const Sidebar: FC = () => {
   return (
-    <div className="lg:h-full w-full lg:w-72 bg-secondary-100 border-[1px] border-borderPrimary-100 flex flex-col ">
+    <div className="lg:h-full w-full lg:w-72 bg-secondary-100 border-[1px] border-borderPrimary-100 flex flex-col">
       <div className="flex-1 flex flex-col space-y-2">
-        <div className="flex items-center py-4 px-5 justify-between md:justify-normal">
+        <div className="flex items-center py-4 px-5 justify-between">
           <div className="flex items-center space-x-1">
             <div>
               <p className="text-white text-3xl font-bold">Fin</p>
