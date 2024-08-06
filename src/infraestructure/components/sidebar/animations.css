@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .fade-enter {
+    @apply opacity-0 scale-90;
+  }
+  .fade-enter-active {
+    @apply transition-opacity transition-transform duration-500;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .fade-leave {
+    @apply opacity-100 scale-100;
+  }
+  .fade-leave-active {
+    @apply transition-opacity transition-transform duration-500;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
