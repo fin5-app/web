@@ -11,7 +11,10 @@ export const CategoriesPage = () => {
     <div className="max-w-100 flex flex-wrap">
       <div className="w-full">
         <div className="w-full flex flex-col gap-5">
-          <div className="grid grid-cols-12 space-x-3">
+          <div className="grid grid-cols-12 space-x-3 items-center">
+            <div className="col-span-9">
+              <SearchBar placeholder={'Buscar categoría de transacción'} />
+            </div>
             <div className="col-span-3">
               <Button
                 text={'Crear categoría'}
@@ -23,7 +26,6 @@ export const CategoriesPage = () => {
               />
             </div>
           </div>
-          <SearchBar placeholder={'Buscar categoría de transacción'} />
           <CategoriesTable />
         </div>
       </div>

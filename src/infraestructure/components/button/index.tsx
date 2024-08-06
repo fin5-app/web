@@ -14,7 +14,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
       <button
         onClick={onClick}
-        className="bg-button-primary py-[5px] px-4 text-white font-normal text-sm rounded-md w-full"
+        className="bg-button-primary py-2 px-4 text-white font-normal text-sm rounded-md w-full"
       >
         {isLoading ? (
           <div className="flex w-full items-center justify-center space-x-2">
@@ -36,8 +36,8 @@ export const Button: FC<ButtonProps> = (props) => {
             <div>{text}</div>
           </div>
         ) : (
-          <div className="flex flex-row items-center justify-center">
-            {Icon ? Icon : null}
+          <div className={`flex flex-row items-center justify-center`}>
+            {Icon ?? null}
             {text}
           </div>
         )}
@@ -47,7 +47,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
       <button
         onClick={onClick}
-        className="border-[1px] border-borderPrimary-100 py-[5px] px-4 text-white font-normal text-sm rounded-md w-full"
+        className="border-[1px] border-borderPrimary-100 py-2 px-4 text-white font-normal text-sm rounded-md w-full"
       >
         {text}
       </button>
