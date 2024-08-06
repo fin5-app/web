@@ -1,4 +1,3 @@
-// import { useRouter, useSearchParams } from 'next/navigation';
 import ChevronUp from '../../../../assets/chevron-up.svg'
 import { FC, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
@@ -35,6 +34,7 @@ export const TableFooter: FC<TableFooterProps> = (props) => {
       setParams(`${searchParams.toString()}`)
     }
   }
+
   useEffect(() => {
     const searchParams = new URLSearchParams(params)
     const page = params.get('page')
@@ -51,7 +51,7 @@ export const TableFooter: FC<TableFooterProps> = (props) => {
       <div className="flex space-x-4 items-center">
         <ChevronUp
           className="h-5 w-5 -rotate-90 text-text-secondary cursor-pointer hover:text-text-primary"
-          onClick={() => handleClickBackPage()}
+          onClick={handleClickBackPage}
         />
         <div className="flex space-x-4">
           {total_pages
@@ -70,7 +70,7 @@ export const TableFooter: FC<TableFooterProps> = (props) => {
         </div>
         <ChevronUp
           className="h-5 w-5 rotate-90 text-text-secondary cursor-pointer hover:text-text-primary"
-          onClick={() => handleClickNextPage()}
+          onClick={handleClickNextPage}
         />
       </div>
     </div>
