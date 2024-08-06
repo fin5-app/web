@@ -1,22 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* animations.css */
+.slide-enter,
+.slide-exit {
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
-@layer components {
-  .fade-enter {
-    @apply opacity-0 scale-90;
-  }
-  .fade-enter-active {
-    @apply transition-opacity transition-transform duration-500;
-    opacity: 1;
-    transform: scale(1);
-  }
-  .fade-leave {
-    @apply opacity-100 scale-100;
-  }
-  .fade-leave-active {
-    @apply transition-opacity transition-transform duration-500;
-    opacity: 0;
-    transform: scale(0.9);
-  }
+.slide-enter {
+  max-height: 0;
+  opacity: 0;
+}
+
+.slide-enter-active {
+  max-height: 200px; /* Ajusta esta altura según tus necesidades */
+  opacity: 1;
+}
+
+.slide-exit {
+  max-height: 200px; /* Ajusta esta altura según tus necesidades */
+  opacity: 1;
+}
+
+.slide-exit-active {
+  max-height: 0;
+  opacity: 0;
 }
