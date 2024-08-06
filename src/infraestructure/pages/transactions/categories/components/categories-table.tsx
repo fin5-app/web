@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useGetTransactionsCategories } from '../../../../hooks/transactions/useGetTransactionsCategories'
 import { Category } from '../../../../../domain/models/Category'
+import EditIcon from '../../../../../assets/pencil.svg'
 
 interface TableRowProps extends Category {}
 
@@ -27,7 +28,7 @@ export const CategoriesTable: FC = () => {
 const TableHead: FC = () => {
   return (
     <div className="grid grid-cols-6 px-3 py-4 border-b-[1px] border-borderPrimary-100">
-      <div className="col-span-2">
+      <div className="col-span-3">
         <p className="text-text-secondary text-xs font-normal">
           Nombre de la categoría
         </p>
@@ -36,7 +37,7 @@ const TableHead: FC = () => {
         <p className="text-text-secondary text-xs font-normal">Fecha</p>
       </div>
       <div>
-        <p className="text-text-secondary text-xs font-normal">Tipo</p>
+        <p className="text-text-secondary text-xs font-normal">Acciones</p>
       </div>
     </div>
   )
@@ -45,7 +46,7 @@ const TableHead: FC = () => {
 const TableRow: FC<TableRowProps> = (props) => {
   return (
     <div className="grid grid-cols-6 px-3 py-4 border-b-[1px] border-borderPrimary-100 items-center hover:cursor-pointer">
-      <div className="col-span-2">
+      <div className="col-span-3">
         <p className="text-text-primary text-sm font-light">{props.name}</p>
       </div>
       <div>
@@ -59,14 +60,10 @@ const TableRow: FC<TableRowProps> = (props) => {
         </p>
       </div>
       <div>
-        <p
-          className={`uppercase w-fit text-secondary-100 px-2  text-[0.65rem] font-bold rounded-full`}
-        >
-          {/* {
-                        props.type.name === TransactionTypes.EXPENSE ? 'Gasto' : 'Ingreso'
-                    } */}
-          Gasto o ingreso
-        </p>
+        <div className="text-text-primary text-sm font-light">
+          <EditIcon width={20} height={20} />
+          {/*    //TODO: fin5-49-crear-componente-modal (Edit category)  */}
+        </div>
       </div>
     </div>
   )

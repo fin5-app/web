@@ -4,8 +4,8 @@ import { Button } from '../../../components/button'
 import PlusIcon from '../../../../assets/plus.svg'
 
 export const CategoriesPage = () => {
-  const handleCreateCategorie = () => {
-    console.log('CREATE CATEGORIE OPEN MODAL')
+  const handleCreateCategory = () => {
+    //TODO: fin5-49-crear-componente-modal (Create Category)
   }
   return (
     <div className="max-w-100 flex flex-wrap">
@@ -16,7 +16,7 @@ export const CategoriesPage = () => {
               <Button
                 text={'Crear categoría'}
                 variant="primary"
-                onClick={handleCreateCategorie}
+                onClick={handleCreateCategory}
                 leftIcon={
                   <PlusIcon className="text-white" width={20} height={20} />
                 }
