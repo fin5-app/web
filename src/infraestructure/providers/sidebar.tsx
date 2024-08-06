@@ -1,34 +1,39 @@
-
-import { useLocation } from "react-router-dom";
-import { createContext, useEffect, useState } from "react"
+import { useLocation } from 'react-router-dom'
+import { createContext, useEffect, useState } from 'react'
 
 interface SidebarContextValues {
-    isOpen: boolean;
-    openSidebar: () => void;
+  isOpen: boolean
+  openSidebar: () => void
+  closeSidebar: () => void
 }
 
 const SidebarContext = createContext<SidebarContextValues>({
-    isOpen: false,
-    openSidebar: () => { },
-});
+  isOpen: false,
+  openSidebar: () => {},
+  closeSidebar: () => {},
+})
 
 function SidebarProvider({ children }: { children: JSX.Element }) {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-    const { pathname } = useLocation();
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const { pathname } = useLocation()
 
-    function openSidebar() {
-        setIsOpen(true);
-    }
+  function openSidebar() {
+    setIsOpen(true)
+  }
 
-    useEffect(() => {
-        setIsOpen(false);
-    }, [pathname])
+  function closeSidebar() {
+    setIsOpen(false)
+  }
 
-    return (
-        <SidebarContext.Provider value={{ isOpen, openSidebar }}>
-            {children}
-        </SidebarContext.Provider>
-    )
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
+
+  return (
+    <SidebarContext.Provider value={{ isOpen, openSidebar, closeSidebar }}>
+      {children}
+    </SidebarContext.Provider>
+  )
 }
 export default SidebarContext
-export { SidebarProvider } 
+export { SidebarProvider }
