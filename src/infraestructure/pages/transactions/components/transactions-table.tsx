@@ -26,6 +26,7 @@ export const TransactionsTable: FC = () => {
           'items-center flex justify-center'
         }`}
       >
+
         {transactions && transactions.transactions.length > 0 ? (
           transactions?.transactions.map((t) => <TableRow {...t} key={t.id} />)
         ) : (
