@@ -19,7 +19,14 @@ export const TransactionsTable: FC = () => {
   return (
     <div className="w-full bg-secondary-100 border-[1px] border-borderPrimary-100 min-h-[%50] rounded-[6px]">
       <TableHead />
-      <div className="min-h-[15rem] items-center flex justify-center">
+      <div
+        className={`min-h-[15rem]  ${
+          transactions &&
+          transactions.transactions.length === 0 &&
+          'items-center flex justify-center'
+        }`}
+      >
+
         {transactions && transactions.transactions.length > 0 ? (
           transactions?.transactions.map((t) => <TableRow {...t} key={t.id} />)
         ) : (
