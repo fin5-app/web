@@ -2,6 +2,7 @@ import { FC } from "react";
 import { FaqCard } from "./components/FaqCard";
 import faqItems from "../../constants/faq";
 import Navbar from "../../components/navbar";
+import { Footer } from "../../components/footer";
 
 interface FaqPageProps {
 }
@@ -13,7 +14,7 @@ export const FaqPage: FC<FaqPageProps> = () => {
         <div className="flex flex-col">
             <Navbar/>
             <div className="flex justify-center items-center py-10">
-                <h1 className="text-white text-center text-2xl md:text-3xl font-bold">Frequently Asked Question</h1>
+                <h1 className="text-white text-center text-2xl md:text-3xl font-bold">Preguntas frecuentes</h1>
             </div>
             <div className='min-h-screen bg-primary-100 w-full justify-center flex'>
                 <div className='grid grid-cols-2 w-full p-5 gap-4'>
@@ -28,6 +29,7 @@ export const FaqPage: FC<FaqPageProps> = () => {
                     }
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

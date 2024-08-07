@@ -3,7 +3,7 @@ import Navbar from '../../components/navbar'
 import Fin5Dashboard from '../../../assets/fin5_dashboard.jpeg'
 import Fin5DashboardPhone from '../../../assets/fin5_dashboard_phone.jpeg'
 import { Link } from 'react-router-dom'
-import { LandingFooter } from './components/landing-footer'
+import { Footer } from '../../components/footer/index'
 
 export const LandingPage: FC = () => {
   return (
@@ -66,7 +66,7 @@ export const LandingPage: FC = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 pt-10 xl:pt-20">
-        <LandingFooter />
+        <Footer />
       </div>
     </main>
   )

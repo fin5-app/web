@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import Fin5Logo from '../../../../assets/fin5.svg'
+import Fin5Logo from '../../../assets/fin5.svg'
 
 // interface SocialMediaItemProps {
 //   icon: JSX.Element
 // }
 
-export const LandingFooter: FC = () => {
+export const Footer: FC = () => {
   return (
     <div className="grid grid-cols-4">
       <div className="grid grid-cols-1 col-start-2 col-span-2 p-4">
