@@ -4,15 +4,10 @@ import faqItems from "../../constants/faq";
 import Navbar from "../../components/navbar";
 
 interface FaqPageProps {
-
 }
-
 // ToDo: 
 // 1. Maquetar el title y header de la section Faq. Reutilizar header de landing
 // 2. Bacground takenos violeta, leio ;)
-
-
-
 export const FaqPage: FC<FaqPageProps> = () => {
     return (
         <div className="flex flex-col">

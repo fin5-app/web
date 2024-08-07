@@ -6,7 +6,6 @@ interface FaqCardProps {
     faqItem: FAQItem
 }
 
-// Todo Tituo, icono y borde violeta hover
 
 export const FaqCard: FC<FaqCardProps> = ({ faqItem }) => {
     return (
