@@ -1,4 +1,3 @@
-import { TableFooter } from './transactions-table-footer'
 import { FC } from 'react'
 import { formatCurrency } from '../../../utils/currency'
 import { Transaction } from '../../../../domain/models/Transaction'
@@ -6,6 +5,7 @@ import { useGetTransactions } from '../../../hooks/transactions/useGetTransactio
 import { TransactionTypes } from '../../../../domain/models/TransactionType'
 import { useSearchParams } from 'react-router-dom'
 import { EmptyTransactions } from '../../dashboard/components/empty-transactions'
+import { TableFooter } from '../../../components/table-footer'
 
 interface TableRowProps extends Transaction {}
 

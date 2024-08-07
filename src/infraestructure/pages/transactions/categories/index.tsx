@@ -3,6 +3,8 @@ import { CategoriesTable } from './components/categories-table'
 import { Button } from '../../../components/button'
 import PlusIcon from '../../../../assets/plus.svg'
 import { useModal } from '../../../providers/modal'
+import { useSearchParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export const CategoriesPage = () => {
   const { showModal } = useModal()
@@ -28,6 +30,14 @@ export const CategoriesPage = () => {
       </div>
     )
   }
+  const searchParams = new URLSearchParams()
+  const [params, setParams] = useSearchParams()
+
+  useEffect(() => {
+    searchParams.set('page', '1')
+    searchParams.set('items', '7')
+    setParams(searchParams.toString())
+  }, [params])
   return (
     <div className="max-w-100 flex flex-wrap">
       <div className="w-full">
