@@ -6,21 +6,24 @@ import { PrivateLayout } from '../../layouts/private-layout'
 import { SidebarProvider } from '../../providers/sidebar'
 import { CategoriesPage } from '../../pages/transactions/categories/index'
 import { CreateTransactionPage } from '../../pages/transactions/create-transaction/index'
+import { ModalProvider } from '../../providers/modal'
 
 export const PrivateRouter: FC = () => {
   return (
-    <SidebarProvider>
-      <PrivateLayout>
-        <Routes>
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/transactions">
-            <Route path="" element={<TransactionsPage />} />
-            <Route path="create" element={<CreateTransactionPage />} />
-            <Route path="categories" element={<CategoriesPage />} />
-          </Route>
-          <Route path="/*" element={<Navigate to="/dashboard" />} />
-        </Routes>
-      </PrivateLayout>
-    </SidebarProvider>
+    <ModalProvider>
+      <SidebarProvider>
+        <PrivateLayout>
+          <Routes>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/transactions">
+              <Route path="" element={<TransactionsPage />} />
+              <Route path="create" element={<CreateTransactionPage />} />
+              <Route path="categories" element={<CategoriesPage />} />
+            </Route>
+            <Route path="/*" element={<Navigate to="/dashboard" />} />
+          </Routes>
+        </PrivateLayout>
+      </SidebarProvider>
+    </ModalProvider>
   )
 }

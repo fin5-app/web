@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom'
 import { useGetTransactionsCategories } from '../../../../hooks/transactions/useGetTransactionsCategories'
 import { Category } from '../../../../../domain/models/Category'
 import EditIcon from '../../../../../assets/pencil.svg'
+import EditCategoryModalContent from './edit-category-modal-content'
+import { useTransactionCategoriesController } from '../controller'
 
 interface TableRowProps extends Category {}
 
@@ -44,6 +46,8 @@ const TableHead: FC = () => {
 }
 
 const TableRow: FC<TableRowProps> = (props) => {
+  const { handleOpenModal } = useTransactionCategoriesController()
+
   return (
     <div className="grid grid-cols-6 px-3 py-4 border-b-[1px] border-borderPrimary-100 items-center hover:cursor-pointer">
       <div className="col-span-3">
@@ -61,8 +65,13 @@ const TableRow: FC<TableRowProps> = (props) => {
       </div>
       <div>
         <div className="text-text-primary text-sm font-light">
-          <EditIcon width={20} height={20} />
-          {/*    //TODO: fin5-49-crear-componente-modal (Edit category)  */}
+          <EditIcon
+            width={15}
+            height={15}
+            onClick={() =>
+              handleOpenModal(<EditCategoryModalContent {...props} />)
+            }
+          />
         </div>
       </div>
     </div>
