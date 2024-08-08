@@ -20,9 +20,7 @@ export const CategoriesPage = () => {
                 text={'Crear categoría'}
                 variant="primary"
                 onClick={handleCreateCategory}
-                leftIcon={
-                  <PlusIcon className="text-white" width={20} height={20} />
-                }
+                leftIcon={<PlusIcon className="w-4 h-4" />}
               />
             </div>
           </div>

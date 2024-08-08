@@ -9,14 +9,20 @@ interface ButtonProps {
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { text, variant, onClick, isLoading, leftIcon: Icon } = props
+  const { text, variant, onClick, leftIcon: Icon } = props
   if (variant === 'primary') {
     return (
       <button
         onClick={onClick}
         className="bg-button-primary py-2 px-4 text-white font-normal text-sm rounded-md w-full"
       >
-        {isLoading ? (
+        <div className="relative w-full flex items-center justify-center">
+          <div className="absolute left-0">{Icon ?? null}</div>
+          <div className={`flex flex-1 items-center justify-center`}>
+            {text}
+          </div>
+        </div>
+        {/* {isLoading ? (
           <div className="flex w-full items-center justify-center space-x-2">
             <div role="status">
               <svg
@@ -35,21 +41,23 @@ export const Button: FC<ButtonProps> = (props) => {
             </div>
             <div>{text}</div>
           </div>
-        ) : (
-          <div className={`flex flex-row items-center justify-center`}>
-            {Icon ?? null}
-            {text}
-          </div>
-        )}
+        ) : ( */}
+
+        {/* )} */}
       </button>
     )
   } else {
     return (
       <button
         onClick={onClick}
-        className="border-[1px] border-borderPrimary-100 py-2 px-4 text-white font-normal text-sm rounded-md w-full"
+        className="border-[1px] border-borderPrimary-100 py-2 px-4 text-white font-normal text-sm rounded-md w-full relative"
       >
-        {text}
+        <div className="relative w-full flex items-center justify-center">
+          <div className="absolute left-0">{Icon ?? null}</div>
+          <div className={`flex flex-1 items-center justify-center`}>
+            {text}
+          </div>
+        </div>
       </button>
     )
   }
