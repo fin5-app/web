@@ -10,7 +10,7 @@ export const TransactionsPage: FC = () => {
     searchParams.set('page', '1')
     searchParams.set('items', '7')
     setParams(searchParams.toString())
-  }, [])
+  }, [params])
 
   return (
     <div className="max-w-100 flex flex-wrap">
