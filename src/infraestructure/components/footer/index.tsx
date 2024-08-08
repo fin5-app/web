@@ -2,10 +2,6 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import Fin5Logo from '../../../assets/fin5.svg'
 
-// interface SocialMediaItemProps {
-//   icon: JSX.Element
-// }
-
 export const Footer: FC = () => {
   return (
     <div className="grid grid-cols-4">
@@ -46,17 +42,3 @@ const Copyright = () => {
     </div>
   )
 }
-
-// const SocialMedia: FC = () => {
-//   return (
-//     <div>
-//       {SOCIAL_MEDIA.map((item) => (
-//         <SocialMediaItem />
-//       ))}
-//     </div>
-//   )
-// }
-
-// const SocialMediaItem: FC<SocialMediaItemProps> = () => {
-//   return <div>SocialMediaItem</div>
-// }

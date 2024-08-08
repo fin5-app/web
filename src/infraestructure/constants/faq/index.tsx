@@ -1,22 +1,18 @@
 import { ReactElement } from 'react';
-import ChartLineIcon from '../../../assets/chart-line.svg';
-import LightIcon from '../../../assets/lightbulb.svg';
-import CreditCardIcon from '../../../assets/credit-card.svg';
-import HandCoinsIcons from '../../../assets/hand-coins.svg';
-import Shield from '../../../assets/shield-ellipsis.svg';
 import Users from '../../../assets/users.svg';
-import Support from '../../../assets/circle-help.svg';
 import Cancel from '../../../assets/circle-x.svg';
+import LightIcon from '../../../assets/lightbulb.svg';
+import Support from '../../../assets/circle-help.svg';
+import Shield from '../../../assets/shield-ellipsis.svg';
+import ChartLineIcon from '../../../assets/chart-line.svg';
+import HandCoinsIcons from '../../../assets/hand-coins.svg';
+import CreditCardIcon from '../../../assets/credit-card.svg';
 
 export type FAQItem = {
   question: string;
   answer: string;
   icon: ReactElement;
 };
-
-// todo:
-// 1. Definir contenido real
-// 1.1. Que sea español
 
 const faqItems: FAQItem[] = [
   {
@@ -62,10 +58,3 @@ const faqItems: FAQItem[] = [
 ];
 
 export default faqItems;
-
-
-
-
-
-
-
