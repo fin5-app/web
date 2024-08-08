@@ -27,7 +27,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         <div className="mt-2">{children}</div>
       </div>
     </div>,
-    document.getElementById('modal-root') as HTMLElement
+    document.getElementById('root') as HTMLElement
   )
 }
 

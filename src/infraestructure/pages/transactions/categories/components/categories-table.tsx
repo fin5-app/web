@@ -3,10 +3,10 @@ import { useSearchParams } from 'react-router-dom'
 import { useGetTransactionsCategories } from '../../../../hooks/transactions/useGetTransactionsCategories'
 import { Category } from '../../../../../domain/models/Category'
 import EditIcon from '../../../../../assets/pencil.svg'
-import { useModal } from '../../../../providers/modal'
-import { Button } from '../../../../components/button'
 import { TableFooter } from '../../../../components/table-footer'
 import { EmptyTransactions } from '../../../dashboard/components/empty-transactions'
+import EditCategoryModalContent from './edit-category-modal-content'
+import { useTransactionCategoriesController } from '../controller'
 
 interface TableRowProps extends Category {}
 
@@ -52,7 +52,7 @@ const TableHead: FC = () => {
 }
 
 const TableRow: FC<TableRowProps> = (props) => {
-  const { showModal } = useModal()
+  const { handleOpenModal } = useTransactionCategoriesController()
 
   return (
     <div className="grid grid-cols-6 px-3 py-4 border-b-[1px] border-borderPrimary-100 items-center hover:cursor-pointer">
@@ -75,26 +75,7 @@ const TableRow: FC<TableRowProps> = (props) => {
             width={15}
             height={15}
             onClick={() =>
-              //TODO:fin5-57-integrar-modals-crear-y-editar-categoria-de-trans-con
-              showModal(
-                <div className="space-y-3">
-                  <label className="text-normal text-sm text-text-primary">
-                    Editar categoría
-                  </label>
-                  <input
-                    className="peer block w-full rounded-md border border-borderPrimary-100 py-2 px-3 text-sm outline-2 bg-primary-100 text-white"
-                    id="email"
-                    type="text"
-                    name="email"
-                    value={props.name}
-                    // onChange={handleChange('email')}
-                    // onBlur={handleBlur('email')}
-                    required
-                    minLength={6}
-                  />
-                  <Button text={'Guardar'} variant="primary" />
-                </div>
-              )
+              handleOpenModal(<EditCategoryModalContent {...props} />)
             }
           />
         </div>
