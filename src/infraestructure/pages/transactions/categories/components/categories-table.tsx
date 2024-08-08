@@ -3,6 +3,10 @@ import { useSearchParams } from 'react-router-dom'
 import { useGetTransactionsCategories } from '../../../../hooks/transactions/useGetTransactionsCategories'
 import { Category } from '../../../../../domain/models/Category'
 import EditIcon from '../../../../../assets/pencil.svg'
+import { TableFooter } from '../../../../components/table-footer'
+import { EmptyTransactions } from '../../../dashboard/components/empty-transactions'
+import EditCategoryModalContent from './edit-category-modal-content'
+import { useTransactionCategoriesController } from '../controller'
 
 interface TableRowProps extends Category {}
 
@@ -17,10 +21,14 @@ export const CategoriesTable: FC = () => {
   return (
     <div className="w-full bg-secondary-100 border-[1px] border-borderPrimary-100 min-h-[%50] rounded-[6px]">
       <TableHead />
-      {transactionCategories?.data.map((t) => (
-        <TableRow {...t} key={t.id} />
-      ))}
-      {/* <TableFooter total_pages={transactionCategories?.total_pages} current_page={Number(params.get('page'))} /> */}
+      {transactionCategories && transactionCategories.data.length > 0 ? (
+        transactionCategories?.data.map((t) => <TableRow {...t} key={t.id} />)
+      ) : (
+        <EmptyTransactions
+          message={'No tienes ninguna categoría creada para las transacciones'}
+        />
+      )}
+      <TableFooter total_pages={1} current_page={Number(params.get('page'))} />
     </div>
   )
 }
@@ -44,6 +52,8 @@ const TableHead: FC = () => {
 }
 
 const TableRow: FC<TableRowProps> = (props) => {
+  const { handleOpenModal } = useTransactionCategoriesController()
+
   return (
     <div className="grid grid-cols-6 px-3 py-4 border-b-[1px] border-borderPrimary-100 items-center hover:cursor-pointer">
       <div className="col-span-3">
@@ -61,8 +71,13 @@ const TableRow: FC<TableRowProps> = (props) => {
       </div>
       <div>
         <div className="text-text-primary text-sm font-light">
-          <EditIcon width={20} height={20} />
-          {/*    //TODO: fin5-49-crear-componente-modal (Edit category)  */}
+          <EditIcon
+            width={15}
+            height={15}
+            onClick={() =>
+              handleOpenModal(<EditCategoryModalContent {...props} />)
+            }
+          />
         </div>
       </div>
     </div>

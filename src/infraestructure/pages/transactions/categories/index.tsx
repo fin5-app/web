@@ -2,11 +2,12 @@ import { SearchBar } from './components/search-bar'
 import { CategoriesTable } from './components/categories-table'
 import { Button } from '../../../components/button'
 import PlusIcon from '../../../../assets/plus.svg'
+import { useTransactionCategoriesController } from './controller'
+import CreateCategoryModalContent from './components/create-category-modal-content'
 
 export const CategoriesPage = () => {
-  const handleCreateCategory = () => {
-    //TODO: fin5-49-crear-componente-modal (Create Category)
-  }
+  const { handleOpenModal } = useTransactionCategoriesController()
+
   return (
     <div className="max-w-100 flex flex-wrap">
       <div className="w-full">
@@ -19,8 +20,10 @@ export const CategoriesPage = () => {
               <Button
                 text={'Crear categoría'}
                 variant="primary"
-                onClick={handleCreateCategory}
-                leftIcon={<PlusIcon className="w-4 h-4" />}
+                onClick={() => handleOpenModal(<CreateCategoryModalContent />)}
+                leftIcon={
+                  <PlusIcon className="text-white" width={20} height={20} />
+                }
               />
             </div>
           </div>

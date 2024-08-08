@@ -1,4 +1,4 @@
-import ChevronUp from '../../../../assets/chevron-up.svg'
+import ChevronUp from '../../../assets/chevron-up.svg'
 import { FC, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
