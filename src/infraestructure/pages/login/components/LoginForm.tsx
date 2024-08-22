@@ -1,9 +1,15 @@
-import { FC } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../../../components/button/index'
 import { useLoginController } from '../controller'
+import GoogleIcon from '../../../../assets/GoogleIcon.svg'
 
-export const LoginForm: FC = () => {
+interface LoginFormProps {
+  setIsGoogleAuthenticating: Dispatch<SetStateAction<boolean>>
+}
+
+export const LoginForm: FC<LoginFormProps> = (props) => {
+  const { setIsGoogleAuthenticating } = props
   const {
     handleNavigateToRegisterPage,
     handleBlur,
@@ -11,7 +17,8 @@ export const LoginForm: FC = () => {
     handleSubmit,
     values,
     isPending,
-  } = useLoginController()
+    handleGoogleSignIn,
+  } = useLoginController({ setIsGoogleAuthenticating })
   return (
     <div className="bg-secondary-100 border-borderPrimary-100 border-[1px] p-4 rounded-md space-y-4 w-[320px]">
       <div className="space-y-2">
@@ -58,6 +65,12 @@ export const LoginForm: FC = () => {
           text="Iniciar Sesión"
           isLoading={isPending}
           onClick={handleSubmit}
+        />
+        <Button
+          variant="secondary"
+          leftIcon={<GoogleIcon className="w-4 h-4" />}
+          text="Iniciar Sesión con Google"
+          onClick={handleGoogleSignIn}
         />
         <Button
           variant="secondary"

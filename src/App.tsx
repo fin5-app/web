@@ -1,5 +1,6 @@
-import { FC, useEffect, useState } from 'react'
 import { AppRouter } from './infraestructure/router/router'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import { FC, useEffect, useState } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './index.css'
 import { Fin5Loader } from './infraestructure/components/fin5-loader'
@@ -28,12 +29,16 @@ export const App: FC = () => {
     }
   }, [])
   return (
-    <QueryClientProvider client={queryClient}>
-      {loading && <Fin5Loader />}
-      <div className={`${loading && 'hidden'}`}>
-        <AppRouter />
-      </div>
-    </QueryClientProvider>
+    <GoogleOAuthProvider
+      clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID as string}
+    >
+      <QueryClientProvider client={queryClient}>
+        {loading && <Fin5Loader />}
+        <div className={`${loading && 'hidden'}`}>
+          <AppRouter />
+        </div>
+      </QueryClientProvider>
+    </GoogleOAuthProvider>
   )
 }
 
