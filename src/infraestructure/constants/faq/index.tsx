@@ -1,0 +1,60 @@
+import { ReactElement } from 'react';
+import Users from '../../../assets/users.svg';
+import Cancel from '../../../assets/circle-x.svg';
+import LightIcon from '../../../assets/lightbulb.svg';
+import Support from '../../../assets/circle-help.svg';
+import Shield from '../../../assets/shield-ellipsis.svg';
+import ChartLineIcon from '../../../assets/chart-line.svg';
+import HandCoinsIcons from '../../../assets/hand-coins.svg';
+import CreditCardIcon from '../../../assets/credit-card.svg';
+
+export type FAQItem = {
+  question: string;
+  answer: string;
+  icon: ReactElement;
+};
+
+const faqItems: FAQItem[] = [
+  {
+    question: '¿Qué es Fin 5?',
+    answer: 'Fin 5 es una aplicación financiera que te ayuda a organizar y controlar tus finanzas personales y familiares de manera intuitiva.',
+    icon: <ChartLineIcon style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+  {
+    question: '¿Cómo puedo empezar a usar Fin 5?',
+    answer: 'Puedes comenzar a usar Fin 5 registrándote en nuestra plataforma y disfrutando de un periodo de prueba gratuito de 14 días.',
+    icon: <LightIcon style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+  {
+    question: '¿Cómo administro mis ingresos y gastos?',
+    answer: 'Fin 5 te permite registrar y categorizar tus ingresos y gastos, brindándote una visión clara de tu situación financiera.',
+    icon: <CreditCardIcon style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+  {
+    question: '¿Puedo establecer metas financieras?',
+    answer: 'Sí, con Fin 5 puedes establecer metas financieras personalizadas y hacer seguimiento de tu progreso para alcanzarlas.',
+    icon: <HandCoinsIcons style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+  {
+    question: '¿Es seguro usar Fin 5?',
+    answer: 'Sí, Fin 5 utiliza cifrado de nivel industrial para proteger tus datos y garantizar tu privacidad.',
+    icon: <Shield style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+  {
+    question: '¿Puedo compartir mi cuenta con otros miembros de mi familia?',
+    answer: 'Sí, Fin 5 te permite compartir el acceso a tu cuenta con miembros de tu familia para que puedan colaborar en la gestión financiera.',
+    icon: <Users style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+  {
+    question: '¿Cómo me contacto con soporte?',
+    answer: 'Puedes contactar a nuestro equipo de soporte a través de la página de soporte o enviando un correo electrónico a soporte@fin5.com.',
+    icon: <Support style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+  {
+    question: '¿Cómo puedo cancelar mi suscripción?',
+    answer: 'Puedes cancelar tu suscripción en cualquier momento desde la configuración de tu cuenta. La cancelación se hará efectiva al final del periodo de facturación actual.',
+    icon: <Cancel style={{ width: 40, height: 40 }} className='text-text-primary'/>,
+  },
+];
+
+export default faqItems;

@@ -9,7 +9,7 @@ export const AuthFooter: FC = () => {
           Terms
         </p>
       </Link>
-      <Link to={'#!'} className='text-xs text-text-secondary'>
+      <Link to={'/faq'} className='text-xs text-text-secondary'>
         <p className='text-center'>
           FAQ
         </p>
