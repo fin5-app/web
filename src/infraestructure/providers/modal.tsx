@@ -1,21 +1,35 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import { FC, ReactNode, createContext, useState } from 'react'
 import Modal from '../components/modal'
+import { ModalVariant } from '../constants/modal'
 
 interface ModalContextProps {
-  showModal: (content: ReactNode) => void
+  showModal: (
+    content: ReactNode,
+    modalTitle: string,
+    modalVariant?: ModalVariant
+  ) => void
   closeModal: () => void
 }
 
-const ModalContext = createContext<ModalContextProps | undefined>(undefined)
+const ModalContext = createContext<ModalContextProps>({
+  closeModal: () => {},
+  showModal: () => {},
+})
 
-export const ModalProvider: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => {
-  const [isOpen, setIsOpen] = useState(false)
+const ModalProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const [content, setContent] = useState<ReactNode>(null)
+  const [variant, setVariant] = useState<ModalVariant>(ModalVariant.Small)
+  const [title, setTitle] = useState<string>('')
 
-  const showModal = (modalContent: ReactNode) => {
+  const showModal = (
+    modalContent: ReactNode,
+    modalTitle: string,
+    modalVariant?: ModalVariant
+  ) => {
     setContent(modalContent)
+    setTitle(modalTitle)
+    setVariant(modalVariant ?? ModalVariant.Small)
     setIsOpen(true)
   }
 
@@ -27,17 +41,17 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({
   return (
     <ModalContext.Provider value={{ showModal, closeModal }}>
       {children}
-      <Modal isOpen={isOpen} onClose={closeModal}>
+      <Modal
+        isOpen={isOpen}
+        onClose={closeModal}
+        variant={variant}
+        title={title}
+      >
         {content}
       </Modal>
     </ModalContext.Provider>
   )
 }
 
-export const useModal = (): ModalContextProps => {
-  const context = useContext(ModalContext)
-  if (!context) {
-    throw new Error('useModal must be used within a ModalProvider')
-  }
-  return context
-}
+export default ModalContext
+export { ModalProvider }

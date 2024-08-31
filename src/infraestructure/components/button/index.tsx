@@ -14,9 +14,9 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
       <button
         onClick={onClick}
-        className="bg-button-primary py-2 px-4 text-white font-normal text-sm rounded-md w-full"
+        className="bg-button-primary text-white font-normal text-sm rounded-md w-full px-2"
       >
-        <div className="relative w-full flex items-center justify-center">
+        <div className="relative w-full flex items-center justify-centergap-2 py-2 px-4">
           <div className="absolute left-0">{Icon ?? null}</div>
           <div className={`flex flex-1 items-center justify-center`}>
             {text}
