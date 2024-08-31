@@ -4,17 +4,28 @@ import { MobileMenu } from './mobile-menu'
 import { FC } from 'react'
 import { SidebarDollarBlue } from './sidebar-dollar-blue'
 import { SidebarUserItem } from './sidebar-user-item'
-import { MAIN_MENU_ITEMS } from '../../constants/menu-items/index'
-
-export interface SidebarItemProps {
-  id: string
-  name: string
-  url: string
-  icon: JSX.Element
-  routes?: SidebarItemProps[]
-}
+import {
+  MAIN_MENU_ITEMS,
+  SidebarItemProps,
+} from '../../constants/menu-items/index'
 
 export const Sidebar: FC = () => {
+  const renderSidebarItems = (
+    items: SidebarItemProps[],
+    parentUrl?: string
+  ): SidebarItemProps[] => {
+    return items.map((item) => ({
+      ...item,
+      url: parentUrl ? `${parentUrl}${item.url}` : item.url,
+      routes: item.routes
+        ? renderSidebarItems(
+            item.routes,
+            parentUrl ? `${parentUrl}${item.url}` : item.url
+          )
+        : [],
+    }))
+  }
+
   return (
     <div className="lg:h-full w-full lg:w-72 bg-secondary-100 border-[1px] border-borderPrimary-100 flex flex-col">
       <div className="flex-1 flex flex-col space-y-2">
@@ -30,7 +41,7 @@ export const Sidebar: FC = () => {
           <MobileMenu sidebarItems={MAIN_MENU_ITEMS} />
         </div>
         <div className={`hidden lg:flex lg:flex-col px-3 space-y-2`}>
-          {MAIN_MENU_ITEMS.map((item) => (
+          {renderSidebarItems(MAIN_MENU_ITEMS).map((item) => (
             <SidebarItem key={item.id} {...item} />
           ))}
         </div>

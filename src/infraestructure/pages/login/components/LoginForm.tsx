@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '../../../components/button/index'
 import { useLoginController } from '../controller'
 import GoogleIcon from '../../../../assets/GoogleIcon.svg'
+import { Fin5Loader } from '../../../components/fin5-loader'
 
 interface LoginFormProps {
   setIsGoogleAuthenticating: Dispatch<SetStateAction<boolean>>
@@ -19,6 +20,7 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
     isPending,
     handleGoogleSignIn,
   } = useLoginController({ setIsGoogleAuthenticating })
+  if (isPending) return <Fin5Loader />
   return (
     <div className="bg-secondary-100 border-borderPrimary-100 border-[1px] p-4 rounded-md space-y-4 w-[320px]">
       <div className="space-y-2">

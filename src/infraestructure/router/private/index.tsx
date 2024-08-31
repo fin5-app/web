@@ -1,11 +1,10 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { FC } from 'react'
 import { DashboardPage } from '../../pages/dashboard'
-import { TransactionsPage } from '../../pages/transactions'
+import { TransactionsPage } from '../../pages/transactions/table'
 import { PrivateLayout } from '../../layouts/private-layout'
 import { SidebarProvider } from '../../providers/sidebar'
 import { CategoriesPage } from '../../pages/transactions/categories/index'
-import { CreateTransactionPage } from '../../pages/transactions/create-transaction/index'
 import { ModalProvider } from '../../providers/modal'
 
 export const PrivateRouter: FC = () => {
@@ -16,8 +15,7 @@ export const PrivateRouter: FC = () => {
           <Routes>
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/transactions">
-              <Route path="" element={<TransactionsPage />} />
-              <Route path="create" element={<CreateTransactionPage />} />
+              <Route path="history" element={<TransactionsPage />} />
               <Route path="categories" element={<CategoriesPage />} />
             </Route>
             <Route path="/*" element={<Navigate to="/dashboard" />} />

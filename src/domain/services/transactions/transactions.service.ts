@@ -22,8 +22,7 @@ export default class TransactionsService {
     }
 
     const response: AxiosResponse<GetTransactionCategories> =
-      await AXIOS_INSTANCE.get(`/transaction/transaction-categories`)
-
+      await AXIOS_INSTANCE.get(`/transaction/transaction-categories?${query}`)
     return response.data
   }
 }

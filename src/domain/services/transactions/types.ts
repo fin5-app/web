@@ -9,6 +9,6 @@ export interface GetTransactions {
 
 export interface GetTransactionCategories {
   success: boolean
-  data: Category[]
-  // total_pages: number
+  categories: Category[]
+  total_pages: number
 }

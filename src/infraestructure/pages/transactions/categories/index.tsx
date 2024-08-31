@@ -4,10 +4,20 @@ import { Button } from '../../../components/button'
 import PlusIcon from '../../../../assets/plus.svg'
 import { useTransactionCategoriesController } from './controller'
 import CreateCategoryModalContent from './components/create-category-modal-content'
+import { ModalVariant } from '../../../constants/modal'
+import { useSearchParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export const CategoriesPage = () => {
   const { handleOpenModal } = useTransactionCategoriesController()
+  const searchParams = new URLSearchParams()
+  const [_, setParams] = useSearchParams()
 
+  useEffect(() => {
+    searchParams.set('page', '1')
+    searchParams.set('items', '7')
+    setParams(searchParams.toString())
+  }, [])
   return (
     <div className="max-w-100 flex flex-wrap">
       <div className="w-full">
@@ -20,7 +30,13 @@ export const CategoriesPage = () => {
               <Button
                 text={'Crear categoría'}
                 variant="primary"
-                onClick={() => handleOpenModal(<CreateCategoryModalContent />)}
+                onClick={() =>
+                  handleOpenModal(
+                    <CreateCategoryModalContent />,
+                    'Crear categoría',
+                    ModalVariant.Small
+                  )
+                }
                 leftIcon={
                   <PlusIcon className="text-white" width={20} height={20} />
                 }
