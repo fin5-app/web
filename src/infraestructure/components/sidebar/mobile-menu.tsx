@@ -1,11 +1,27 @@
 import { useContext, useRef } from 'react'
 import MenuIcon from '../../../assets/menu.svg'
 import SidebarContext from '../../providers/sidebar'
-import { SidebarItemProps } from './index'
 import SidebarItem from './sidebar-item'
+import { SidebarItemProps } from '../../constants/menu-items'
 
 interface MobileMenuProps {
   sidebarItems: SidebarItemProps[]
+}
+
+const renderSidebarItems = (
+  items: SidebarItemProps[],
+  parentUrl?: string
+): SidebarItemProps[] => {
+  return items.map((item) => ({
+    ...item,
+    url: parentUrl ? `${parentUrl}${item.url}` : item.url,
+    routes: item.routes
+      ? renderSidebarItems(
+          item.routes,
+          parentUrl ? `${parentUrl}${item.url}` : item.url
+        )
+      : [],
+  }))
 }
 
 export const MobileMenu: React.FC<MobileMenuProps> = (props) => {
@@ -41,7 +57,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = (props) => {
             ref={menuRef}
             className={`animate-slideIn h-full w-[60%] bg-secondary-100 right-0 absolute p-4 space-y-4`}
           >
-            {sidebarItems.map((item) => (
+            {renderSidebarItems(sidebarItems).map((item) => (
               <SidebarItem key={item.id} {...item} />
             ))}
           </div>

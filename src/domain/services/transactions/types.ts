@@ -12,3 +12,19 @@ export interface GetTransactionCategories {
   categories: Category[]
   total_pages: number
 }
+
+export interface CreateTransactionCategory {
+  success: boolean
+  transaction_category: {
+    id: number
+    name: string
+  }
+}
+
+export interface UpdateTransactionCategory {
+  success: boolean
+  transaction_category: {
+    id: number
+    name: string
+  }
+}
