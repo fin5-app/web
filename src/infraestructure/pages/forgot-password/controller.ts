@@ -17,7 +17,7 @@ export const useForgotPasswordController = () => {
 
   const handleSubmitForm: (
     values: FORGOT_PASSWORD_FORM_VALUES
-  ) => Promise<void> = async ({ email }) => {
+  ) => Promise<void> = async (_props) => {
     //TODO: AWAIT BACKEND FOR INTEGRATION FORGOT PASSWORD FLUX
   }
 
