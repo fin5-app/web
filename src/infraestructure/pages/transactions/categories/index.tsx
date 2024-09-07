@@ -3,7 +3,7 @@ import { CategoriesTable } from './components/categories-table'
 import { Button } from '../../../components/button'
 import PlusIcon from '../../../../assets/plus.svg'
 import { useTransactionCategoriesController } from './controller'
-import CreateCategoryModalContent from './components/create-category-modal-content'
+import CreateCategoryModalContent from './components/create-category-modal/create-category-modal-content'
 import { ModalVariant } from '../../../constants/modal'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -18,15 +18,16 @@ export const CategoriesPage = () => {
     searchParams.set('items', '7')
     setParams(searchParams.toString())
   }, [])
+
   return (
     <div className="max-w-100 flex flex-wrap">
       <div className="w-full">
         <div className="w-full flex flex-col gap-5">
-          <div className="grid grid-cols-12 space-x-3 items-center">
-            <div className="col-span-9">
+          <div className="grid grid-cols-12 gap-3 items-center">
+            <div className="col-span-12 md:col-span-9">
               <SearchBar placeholder={'Buscar categoría de transacción'} />
             </div>
-            <div className="col-span-3">
+            <div className="col-span-6 md:col-span-3">
               <Button
                 text={'Crear categoría'}
                 variant="primary"

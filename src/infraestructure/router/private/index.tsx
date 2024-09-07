@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { FC } from 'react'
 import { DashboardPage } from '../../pages/dashboard'
-import { TransactionsPage } from '../../pages/transactions/table'
+import { TransactionsPage } from '../../pages/transactions/history'
 import { PrivateLayout } from '../../layouts/private-layout'
 import { SidebarProvider } from '../../providers/sidebar'
 import { CategoriesPage } from '../../pages/transactions/categories/index'
