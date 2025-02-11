@@ -3,10 +3,15 @@ import MenuIcon from '../../../assets/menu.svg'
 import SidebarContext from '../../providers/sidebar'
 import SidebarItem from './sidebar-item'
 import { SidebarItemProps } from '../../constants/menu-items'
+import { useAuthStore } from '../../zustand/auth/useAuthStore'
+import { useNavigate } from 'react-router-dom'
+import Logout from '../../../assets/log-out.svg'
 
 interface MobileMenuProps {
   sidebarItems: SidebarItemProps[]
 }
+
+const LOGOUT = 'Cerrar Sesión'
 
 const renderSidebarItems = (
   items: SidebarItemProps[],
@@ -45,6 +50,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = (props) => {
       closeSidebar()
     }
   }
+  const { logout } = useAuthStore()
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
 
   return (
     <div className="visible lg:hidden">
@@ -52,14 +63,27 @@ export const MobileMenu: React.FC<MobileMenuProps> = (props) => {
         <MenuIcon style={{ color: 'white' }} className="w-5 h-5" />
       </button>
       {isOpen && (
-        <div className="w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.4)] absolute top-0 left-0 z-20">
+        <div className="w-screen h-screen bg-[rgba(0,0,0,0.4)] absolute top-0 left-0 z-20 overflow-hidden">
           <div
             ref={menuRef}
-            className={`animate-slideIn h-full w-[60%] bg-secondary-100 right-0 absolute p-4 space-y-4`}
+            className={`animate-slideIn h-full w-[60%] bg-secondary-100 right-0 absolute p-4  max-h-screen`}
           >
-            {renderSidebarItems(sidebarItems).map((item) => (
-              <SidebarItem key={item.id} {...item} />
-            ))}
+            <div className="flex flex-col h-full justify-between">
+              <div className="flex flex-col space-y-4">
+                {renderSidebarItems(sidebarItems).map((item) => (
+                  <SidebarItem key={item.id} {...item} />
+                ))}
+              </div>
+              <button
+                onClick={handleLogout}
+                className="flex space-x-2 items-center px-2 py-2"
+              >
+                <Logout className="w-5 h-5 text-text-primary" />
+                <p className="font-normal text-text-primary text-sm">
+                  {LOGOUT}
+                </p>
+              </button>
+            </div>
           </div>
         </div>
       )}
