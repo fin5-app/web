@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { FaqCard } from './components/FaqCard'
-import faqItems from '../../constants/faq'
 import { Footer } from '@components/footer/Footer'
 import { Navbar } from '@components/navbar/Navbar'
+import faqItems from '@constants/faq'
+import { FaqCard } from './components/FaqCard'
 
 export const Faq: FC = () => {
   return (

@@ -1,14 +1,14 @@
 import { FC } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { useGetTransactionsCategories } from '../../../../hooks/transactions/useGetTransactionsCategories'
-import { Category } from '../../../../../domain/models/Category'
 import EditIcon from '@assets/pencil.svg'
-import { EmptyTransactions } from '../../../dashboard/components/empty-transactions'
-import EditCategoryModalContent from './edit-category-modal/edit-category-modal-content'
-import { useTransactionCategoriesController } from '../controller'
-import { FontVariant } from '../../../../constants/fonts'
 import { TableFooter } from '@components/table-footer/TableFooter'
 import { Text } from '@components/text/Text'
+import { FontVariant } from '@constants/fonts'
+import { useGetTransactionsCategories } from '@hooks/transactions/useGetTransactionsCategories'
+import { EmptyTransactions } from '@pages/dashboard/components/empty-transactions'
+import { Category } from '../../../../../domain/models/Category'
+import EditCategoryModalContent from './edit-category-modal/edit-category-modal-content'
+import { useTransactionCategoriesController } from '../controller'
 
 interface TableRowProps extends Category {}
 

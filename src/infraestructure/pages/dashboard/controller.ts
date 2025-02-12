@@ -1,6 +1,6 @@
-import { useGetCashFlow } from '../../hooks/cash-flow/useGetCashFlow'
-import { useGetTransactions } from '../../hooks/transactions/useGetTransactions'
+import { useGetTransactions } from '@hooks/transactions/useGetTransactions'
 import { useAuthStore } from '../../zustand/auth/useAuthStore'
+import { useGetCashFlow } from '@hooks/cash-flow/useGetCashFlow'
 
 export const useDashboardController = () => {
   const { user } = useAuthStore()

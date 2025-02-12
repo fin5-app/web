@@ -1,10 +1,10 @@
 import { FC } from 'react'
-import { useController } from './controller'
-import { Category } from '../../../../../../domain/models/Category'
-import { FontVariant } from '../../../../../constants/fonts'
 import InfoIcon from '@assets/info.svg'
+import { FontVariant } from '@constants/fonts'
 import { Button } from '@components/button/Button'
 import { Text } from '@components/text/Text'
+import { useController } from './controller'
+import { Category } from '../../../../../../domain/models/Category'
 
 interface EditModalProps extends Category {}
 

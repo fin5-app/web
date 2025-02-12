@@ -1,9 +1,9 @@
+import './index.css'
 import { AppRouter } from './infraestructure/router/router'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { FC, useEffect, useState } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import './index.css'
-import { Fin5Loader } from './infraestructure/components/fin5-loader/Fin5Loader'
+import { Fin5Loader } from '@components/fin5-loader/Fin5Loader'
 
 const queryClient = new QueryClient()
 

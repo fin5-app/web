@@ -1,11 +1,11 @@
+import { useContext, useEffect } from 'react'
+import { useCreateTransactionCategory } from '@hooks/transactions/useCreateTransactionCategory'
+import ModalContext from '@providers/modal'
 import { useFormik } from 'formik'
 import {
   CREATE_TRANSACTION_CATEGORY_INITIAL_VALUES,
   CREATE_TRANSACTION_CATEGORY_VALUES,
 } from './schema'
-import { useCreateTransactionCategory } from '../../../../../hooks/transactions/useCreateTransactionCategory'
-import { useContext, useEffect } from 'react'
-import ModalContext from '../../../../../providers/modal'
 
 export const useController = () => {
   const { closeModal } = useContext(ModalContext)

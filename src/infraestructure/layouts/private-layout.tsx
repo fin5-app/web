@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import Breadcrumb from '../components/breadcrumb/Breadcrumb'
 import { Sidebar } from '@components/sidebar/Sidebar'
+import Breadcrumb from '@components/breadcrumb/Breadcrumb'
 
 interface PrivateLayoutProps {
   children: JSX.Element | JSX.Element[]

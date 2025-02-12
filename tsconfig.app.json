@@ -2,6 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@providers/*": ["src/infraestructure/providers/*"],
+      "@utils/*": ["src/infraestructure/utils/*"],
+      "@constants/*": ["src/infraestructure/constants/*"],
+      "@hooks/*": ["src/infraestructure/hooks/*"],
       "@pages/*": ["src/infraestructure/pages/*"],
       "@components/*": ["src/infraestructure/components/*"],
       "@assets/*": ["src/assets/*"]

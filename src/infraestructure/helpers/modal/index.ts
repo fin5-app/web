@@ -1,4 +1,4 @@
-import { ModalVariant } from '../../constants/modal'
+import { ModalVariant } from '@constants/modal'
 
 export const getModalSize = (variant: ModalVariant): string => {
   switch (variant) {

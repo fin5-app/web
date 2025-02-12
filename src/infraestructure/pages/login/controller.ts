@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
-import { useAuthenticateUser } from '../../hooks/auth/useAuthenticateUser'
-import { useAuthStore } from '../../zustand/auth/useAuthStore'
-import { useFormik } from 'formik'
-import { LOGIN_FORM_SCHEMA, LOGIN_FORM_VALUES } from './schema'
 import { useNavigate } from 'react-router-dom'
-import { useGoogleSignIn } from '../../hooks/auth/useGoogleSignIn'
+import { useFormik } from 'formik'
+import { useAuthenticateUser } from '@hooks/auth/useAuthenticateUser'
+import { useGoogleSignIn } from '@hooks/auth/useGoogleSignIn'
+import { LOGIN_FORM_SCHEMA, LOGIN_FORM_VALUES } from './schema'
+import { useAuthStore } from '../../zustand/auth/useAuthStore'
 
 interface LoginControllerProps {
   setIsGoogleAuthenticating: Dispatch<SetStateAction<boolean>>

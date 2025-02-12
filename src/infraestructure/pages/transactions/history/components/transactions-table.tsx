@@ -1,11 +1,13 @@
 import { FC } from 'react'
-import { formatCurrency } from '../../../../utils/currency'
+import { TableFooter } from '@components/table-footer/TableFooter'
+import { useGetTransactions } from '@hooks/transactions/useGetTransactions'
+import { formatCurrency } from '@utils/currency'
 import { Transaction } from '../../../../../domain/models/Transaction'
-import { useGetTransactions } from '../../../../hooks/transactions/useGetTransactions'
 import { TransactionTypes } from '../../../../../domain/models/TransactionType'
 import { useSearchParams } from 'react-router-dom'
-import { EmptyTransactions } from '../../../dashboard/components/empty-transactions'
-import { TableFooter } from '@components/table-footer/TableFooter'
+
+// TODO: Esto deberia ser algo mas genérico
+import { EmptyTransactions } from '@pages/dashboard/components/empty-transactions'
 
 interface TableRowProps extends Transaction {}
 

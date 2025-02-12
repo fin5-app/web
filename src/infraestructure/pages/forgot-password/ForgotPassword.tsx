@@ -1,7 +1,7 @@
 import { FC } from 'react'
+import { AuthHeader } from '@components/auth-header/AuthHeader'
+import { AuthFooter } from '@components/auth-footer/AuthFooter'
 import { ForgotPasswordForm } from './components/ForgotPasswordForm'
-import { AuthFooter } from '../../components/auth-footer/AuthFooter'
-import { AuthHeader } from '../../components/auth-header/AuthHeader'
 
 export const ForgotPassword: FC = () => {
   return (

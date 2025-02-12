@@ -1,7 +1,7 @@
-import { useFormik } from 'formik'
-import { REGISTER_FORM_SCHEMA, REGISTER_FORM_VALUES } from './schema'
 import { useNavigate } from 'react-router-dom'
-import { useCreateUser } from '../../hooks/auth/useCreateUser'
+import { useFormik } from 'formik'
+import { useCreateUser } from '@hooks/auth/useCreateUser'
+import { REGISTER_FORM_SCHEMA, REGISTER_FORM_VALUES } from './schema'
 
 export const useRegisterController = () => {
   const {

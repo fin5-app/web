@@ -1,6 +1,6 @@
 import { ReactNode, useContext } from 'react'
-import { ModalVariant } from '../../../constants/modal'
-import ModalContext from '../../../providers/modal'
+import { ModalVariant } from '@constants/modal'
+import ModalContext from '@providers/modal'
 
 export const useTransactionCategoriesController = () => {
   const { showModal } = useContext(ModalContext)

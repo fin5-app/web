@@ -1,8 +1,8 @@
 import { FC, useState } from 'react'
+import { AuthHeader } from '@components/auth-header/AuthHeader'
+import { AuthFooter } from '@components/auth-footer/AuthFooter'
+import { Fin5Loader } from '@components/fin5-loader/Fin5Loader'
 import { LoginForm } from './components/LoginForm'
-import { AuthFooter } from '../../components/auth-footer/AuthFooter'
-import { AuthHeader } from '../../components/auth-header/AuthHeader'
-import { Fin5Loader } from '../../components/fin5-loader/Fin5Loader'
 
 export const Login: FC = () => {
   const [isGoogleAuthenticating, setIsGoogleAuthenticating] =

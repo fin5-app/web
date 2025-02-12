@@ -1,13 +1,10 @@
+import { FC } from 'react'
 import Fin5 from '@assets/fin5.png'
+import { MAIN_MENU_ITEMS, SidebarItemProps } from '@constants/menu-items'
 import SidebarItem from './sidebar-item'
 import { MobileMenu } from './mobile-menu'
-import { FC } from 'react'
 import { SidebarDollarBlue } from './sidebar-dollar-blue'
 import { SidebarUserItem } from './sidebar-user-item'
-import {
-  MAIN_MENU_ITEMS,
-  SidebarItemProps,
-} from '../../constants/menu-items/index'
 
 export const Sidebar: FC = () => {
   const renderSidebarItems = (

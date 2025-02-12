@@ -1,9 +1,9 @@
 import { FC } from 'react'
+import { Toast } from '@components/toast/Toast'
+import { ToastVariant } from '@constants/toast'
 import { useDashboardController } from './controller'
 import { CardsWrapper } from './components/cards-wrapper'
 import LatestTransactions from './components/latest-transactions'
-import { ToastVariant } from '../../constants/toast'
-import { Toast } from '@components/toast/Toast'
 import { WelcomeCard } from './components/welcome-card'
 
 export const Dashboard: FC = () => {

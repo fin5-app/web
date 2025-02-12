@@ -1,6 +1,6 @@
 import { FC, ReactNode, createContext, useState } from 'react'
-import { ModalVariant } from '../constants/modal'
 import { Modal } from '@components/modal/Modal'
+import { ModalVariant } from '@constants/modal'
 
 interface ModalContextProps {
   showModal: (

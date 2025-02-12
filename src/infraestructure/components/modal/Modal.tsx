@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react'
-import PlusIcon from '@assets/plus.svg'
-import { ModalVariant } from '../../constants/modal'
-import { getModalSize } from '../../helpers/modal'
 import ReactDOM from 'react-dom'
-import { FontVariant } from '../../constants/fonts'
+import PlusIcon from '@assets/plus.svg'
 import { Text } from '@components/text/Text'
+import { ModalVariant } from '@constants/modal'
+import { FontVariant } from '@constants/fonts'
+import { getModalSize } from '../../helpers/modal'
 
 interface ModalProps {
   isOpen: boolean

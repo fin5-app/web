@@ -1,4 +1,4 @@
-import { FontVariant } from '../../constants/fonts'
+import { FontVariant } from '@constants/fonts'
 
 export const getFontVariantStyles = (variant: FontVariant, color?: string) => {
   switch (variant) {

@@ -1,9 +1,9 @@
-import { useFormik } from 'formik'
-import { UPDATE_TRANSACTION_CATEGORY_VALUES } from './schema'
 import { useContext, useEffect } from 'react'
-import ModalContext from '../../../../../providers/modal'
-import { useUpdateTransactionCategory } from '../../../../../hooks/transactions/useUpdateTransactionCategory'
+import { useFormik } from 'formik'
+import ModalContext from '@providers/modal'
+import { useUpdateTransactionCategory } from '@hooks/transactions/useUpdateTransactionCategory'
 import { Category } from '../../../../../../domain/models/Category'
+import { UPDATE_TRANSACTION_CATEGORY_VALUES } from './schema'
 
 export const useController = (transaction_category: Category) => {
   const { closeModal } = useContext(ModalContext)
