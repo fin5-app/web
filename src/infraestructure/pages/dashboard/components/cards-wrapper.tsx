@@ -2,8 +2,8 @@ import ClockIcon from '../../../../assets/clock.svg'
 import BanknotesIcon from '../../../../assets/banknote.svg'
 import InboxIcon from '../../../../assets/inbox.svg'
 import { formatCurrency } from '../../../utils/currency'
-import { Text } from '../../../components/text'
 import { FontVariant } from '../../../constants/fonts'
+import { Text } from '@components/text/Text'
 
 interface CardBalanceProps {
   title: string
