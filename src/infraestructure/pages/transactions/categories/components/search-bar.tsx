@@ -1,5 +1,5 @@
 import { useDebouncedCallback } from 'use-debounce'
-import SearchIcon from '../../../../../assets/search.svg'
+import SearchIcon from '@assets/search.svg'
 import { FC } from 'react'
 import { useSearchParams } from 'react-router-dom'
 

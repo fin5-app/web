@@ -1,17 +1,17 @@
-import ExpenseTypeIcon from "../../../../assets/landmark.svg";
-import PlusIcon from "../../../../assets/plus.svg";
-import MinusIcon from "../../../../assets/minus.svg";
-import { formatCurrency } from "../../../utils/currency";
-import { TransactionTypes } from "../../../../domain/models/TransactionType";
-import { Transaction } from "../../../../domain/models/Transaction";
-import { EmptyTransactions } from "./empty-transactions";
+import ExpenseTypeIcon from '@assets/landmark.svg'
+import PlusIcon from '@assets/plus.svg'
+import MinusIcon from '@assets/minus.svg'
+import { formatCurrency } from '../../../utils/currency'
+import { TransactionTypes } from '../../../../domain/models/TransactionType'
+import { Transaction } from '../../../../domain/models/Transaction'
+import { EmptyTransactions } from './empty-transactions'
 
 interface LatestTransactions {
-  transactions?: Transaction[];
+  transactions?: Transaction[]
 }
 
 export default function LatestTransactions(props: LatestTransactions) {
-  const { transactions } = props;
+  const { transactions } = props
   return (
     <div className="flex flex-col gap-5">
       <p className="text-text-primary capitalize text-lg">
@@ -21,15 +21,15 @@ export default function LatestTransactions(props: LatestTransactions) {
         <Table latestTransactions={transactions} />
       </div>
     </div>
-  );
+  )
 }
 
 interface TableProps {
-  latestTransactions?: Transaction[];
+  latestTransactions?: Transaction[]
 }
 
 function Table(props: TableProps) {
-  const { latestTransactions } = props;
+  const { latestTransactions } = props
   return (
     <div className="flex flex-col gap-5 p-3 ">
       {!latestTransactions || latestTransactions.length === 0 ? (
@@ -57,10 +57,10 @@ function Table(props: TableProps) {
                   {item.category.name}
                 </p>
                 <p className="text-text-secondary text-xs">
-                  {new Date(item.created).toLocaleDateString("es-AR", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
+                  {new Date(item.created).toLocaleDateString('es-AR', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
                   })}
                 </p>
               </div>
@@ -68,8 +68,8 @@ function Table(props: TableProps) {
             <div className="flex gap-1 md:gap-2 justify-end flex-col md:flex-row items-center md:items-start">
               <p className="text-text-primary text-xs md:text-sm">
                 {item.type.name === TransactionTypes.EXPENSE
-                  ? `${formatCurrency(item.amount, "USD")}`
-                  : `${formatCurrency(item.amount, "USD")}`}
+                  ? `${formatCurrency(item.amount, 'USD')}`
+                  : `${formatCurrency(item.amount, 'USD')}`}
               </p>
               <p className="text-text-primary text-xs md:text-sm">
                 {item.currency.code}
@@ -79,5 +79,5 @@ function Table(props: TableProps) {
         ))
       )}
     </div>
-  );
+  )
 }

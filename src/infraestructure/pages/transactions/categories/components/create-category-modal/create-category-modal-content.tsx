@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { FontVariant } from '../../../../../constants/fonts'
-import InfoIcon from '../../../../../../assets/info.svg'
+import InfoIcon from '@assets/info.svg'
 import { useController } from './controller'
-import { Button } from '../../../../../components/button/Button'
+import { Button } from '@components/button/Button'
 import { Text } from '@components/text/Text'
 
 const BannerText =

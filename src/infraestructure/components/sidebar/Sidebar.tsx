@@ -1,4 +1,4 @@
-import Fin5 from '../../../assets/fin5.png'
+import Fin5 from '@assets/fin5.png'
 import SidebarItem from './sidebar-item'
 import { MobileMenu } from './mobile-menu'
 import { FC } from 'react'

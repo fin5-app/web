@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import Fin5Logo from '../../../assets/fin5.svg'
+import Fin5Logo from '@assets/fin5.svg'
 
 export const Footer: FC = () => {
   return (

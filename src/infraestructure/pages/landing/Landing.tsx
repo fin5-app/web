@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import Fin5Dashboard from '../../../assets/fin5_dashboard.jpeg'
-import Fin5DashboardPhone from '../../../assets/fin5_dashboard_phone.jpeg'
+import Fin5Dashboard from '@assets/fin5_dashboard.jpeg'
+import Fin5DashboardPhone from '@assets/fin5_dashboard_phone.jpeg'
 import { Link } from 'react-router-dom'
 import { Footer } from '@components/footer/Footer'
 import { Navbar } from '@components/navbar/Navbar'

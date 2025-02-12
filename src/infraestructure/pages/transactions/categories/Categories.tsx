@@ -1,12 +1,12 @@
 import { SearchBar } from './components/search-bar'
 import { CategoriesTable } from './components/categories-table'
-import PlusIcon from '../../../../assets/plus.svg'
+import PlusIcon from '@assets/plus.svg'
 import { useTransactionCategoriesController } from './controller'
 import CreateCategoryModalContent from './components/create-category-modal/create-category-modal-content'
 import { ModalVariant } from '../../../constants/modal'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import { Button } from '../../../components/button/Button'
+import { Button } from '@components/button/Button'
 
 export const Categories = () => {
   const { handleOpenModal } = useTransactionCategoriesController()

@@ -1,7 +1,7 @@
-import DashboardIcon from '../../../assets/layout-dashboard.svg'
-import TransactionIcon from '../../../assets/arrow-right-left.svg'
-import CategoriesIcon from '../../../assets/list.svg'
-import WalletIcon from '../../../assets/wallet-minimal.svg'
+import DashboardIcon from '@assets/layout-dashboard.svg'
+import TransactionIcon from '@assets/arrow-right-left.svg'
+import CategoriesIcon from '@assets/list.svg'
+import WalletIcon from '@assets/wallet-minimal.svg'
 export interface SidebarItemProps {
   id: string
   name: string

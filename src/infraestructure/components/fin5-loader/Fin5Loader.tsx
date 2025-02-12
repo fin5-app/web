@@ -1,4 +1,4 @@
-import Fin5 from '../../../assets/fin5.svg'
+import Fin5 from '@assets/fin5.svg'
 
 export const Fin5Loader = () => {
   return (

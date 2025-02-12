@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Fin5 from '../../../assets/fin5.svg'
+import Fin5 from '@assets/fin5.svg'
 
 interface NavbarItemProps {
   id: string

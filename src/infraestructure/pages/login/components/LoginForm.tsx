@@ -1,9 +1,9 @@
 import { Dispatch, FC, SetStateAction } from 'react'
 import { Link } from 'react-router-dom'
 import { useLoginController } from '../controller'
-import GoogleIcon from '../../../../assets/GoogleIcon.svg'
-import { Button } from '../../../components/button/Button'
-import { Fin5Loader } from '../../../components/fin5-loader/Fin5Loader'
+import GoogleIcon from '@assets/GoogleIcon.svg'
+import { Button } from '@components/button/Button'
+import { Fin5Loader } from '@components/fin5-loader/Fin5Loader'
 
 interface LoginFormProps {
   setIsGoogleAuthenticating: Dispatch<SetStateAction<boolean>>

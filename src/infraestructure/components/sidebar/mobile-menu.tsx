@@ -1,11 +1,11 @@
 import { useContext, useRef } from 'react'
-import MenuIcon from '../../../assets/menu.svg'
-import SidebarContext from '../../providers/sidebar'
+import MenuIcon from '@assets/menu.svg'
+import Logout from '@assets/log-out.svg'
 import SidebarItem from './sidebar-item'
+import SidebarContext from '../../providers/sidebar'
 import { SidebarItemProps } from '../../constants/menu-items'
 import { useAuthStore } from '../../zustand/auth/useAuthStore'
 import { useNavigate } from 'react-router-dom'
-import Logout from '../../../assets/log-out.svg'
 
 interface MobileMenuProps {
   sidebarItems: SidebarItemProps[]

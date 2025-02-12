@@ -2,8 +2,8 @@ import { FC } from 'react'
 import { useController } from './controller'
 import { Category } from '../../../../../../domain/models/Category'
 import { FontVariant } from '../../../../../constants/fonts'
-import InfoIcon from '../../../../../../assets/info.svg'
-import { Button } from '../../../../../components/button/Button'
+import InfoIcon from '@assets/info.svg'
+import { Button } from '@components/button/Button'
 import { Text } from '@components/text/Text'
 
 interface EditModalProps extends Category {}

@@ -1,5 +1,5 @@
-import DashboardIcon from '../../../assets/layout-dashboard.svg'
-import TransactionIcon from '../../../assets/arrow-right-left.svg'
+import DashboardIcon from '@assets/layout-dashboard.svg'
+import TransactionIcon from '@assets/arrow-right-left.svg'
 
 export const MAIN_MENU_ITEMS = [
   {

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import EmptyIlustration from '../../../../assets/empty-ilustration.svg'
+import EmptyIlustration from '@assets/empty-ilustration.svg'
 
 interface EmptyTransactionsProps {
   message?: string

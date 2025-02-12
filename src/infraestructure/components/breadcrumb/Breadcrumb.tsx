@@ -1,4 +1,4 @@
-import ChevronUpIcon from '../../../assets/chevron-up.svg'
+import ChevronUpIcon from '@assets/chevron-up.svg'
 import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { MAIN_MENU_ITEMS, makeBreadcrumb } from '../../constants/menu-items'
