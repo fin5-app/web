@@ -3,12 +3,12 @@ import { useSearchParams } from 'react-router-dom'
 import { useGetTransactionsCategories } from '../../../../hooks/transactions/useGetTransactionsCategories'
 import { Category } from '../../../../../domain/models/Category'
 import EditIcon from '../../../../../assets/pencil.svg'
-import { TableFooter } from '../../../../components/table-footer'
 import { EmptyTransactions } from '../../../dashboard/components/empty-transactions'
 import EditCategoryModalContent from './edit-category-modal/edit-category-modal-content'
 import { useTransactionCategoriesController } from '../controller'
-import { Text } from '../../../../components/text'
 import { FontVariant } from '../../../../constants/fonts'
+import { TableFooter } from '@components/table-footer/TableFooter'
+import { Text } from '@components/text/Text'
 
 interface TableRowProps extends Category {}
 

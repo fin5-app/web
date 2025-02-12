@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { Button } from '../../../../../components/button'
-import { Text } from '../../../../../components/text'
 import { FontVariant } from '../../../../../constants/fonts'
 import InfoIcon from '../../../../../../assets/info.svg'
 import { useController } from './controller'
+import { Button } from '../../../../../components/button/Button'
+import { Text } from '@components/text/Text'
 
 const BannerText =
   'Las categorias funcionan tanto para los ingresos como los gastos'

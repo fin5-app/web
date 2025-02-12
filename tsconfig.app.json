@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["src/infraestructure/pages/*"],
+      "@components/*": ["src/infraestructure/components/*"],
+      "@assets/*": ["src/assets/*"]
+    },
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",

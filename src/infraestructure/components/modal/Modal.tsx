@@ -3,8 +3,8 @@ import PlusIcon from '../../../assets/plus.svg'
 import { ModalVariant } from '../../constants/modal'
 import { getModalSize } from '../../helpers/modal'
 import ReactDOM from 'react-dom'
-import { Text } from '../text'
 import { FontVariant } from '../../constants/fonts'
+import { Text } from '@components/text/Text'
 
 interface ModalProps {
   isOpen: boolean
@@ -14,7 +14,7 @@ interface ModalProps {
   title: string
 }
 
-const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   children,
@@ -47,5 +47,3 @@ const Modal: React.FC<ModalProps> = ({
     document.getElementById('root') as HTMLElement
   )
 }
-
-export default Modal

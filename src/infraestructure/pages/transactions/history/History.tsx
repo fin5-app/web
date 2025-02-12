@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react'
 import { MyTransactions } from './components/my-transactions'
 import { useSearchParams } from 'react-router-dom'
 
-export const TransactionsPage: FC = () => {
+export const Transactions: FC = () => {
   const searchParams = new URLSearchParams()
   const [_, setParams] = useSearchParams()
 

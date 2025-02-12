@@ -5,7 +5,7 @@ import { useGetTransactions } from '../../../../hooks/transactions/useGetTransac
 import { TransactionTypes } from '../../../../../domain/models/TransactionType'
 import { useSearchParams } from 'react-router-dom'
 import { EmptyTransactions } from '../../../dashboard/components/empty-transactions'
-import { TableFooter } from '../../../../components/table-footer'
+import { TableFooter } from '@components/table-footer/TableFooter'
 
 interface TableRowProps extends Transaction {}
 

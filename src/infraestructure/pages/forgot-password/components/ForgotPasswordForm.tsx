@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { Button } from '../../../components/button/index'
 import { useForgotPasswordController } from '../controller'
+import { Button } from '../../../components/button/Button'
 
 export const ForgotPasswordForm: FC = () => {
   const {

@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { Button } from '../../../components/button'
 import { useRegisterController } from '../controller'
+import { Button } from '../../../components/button/Button'
 
 export const RegisterForm: FC = () => {
   const {

@@ -1,11 +1,11 @@
 import { FC } from 'react'
-import Navbar from '../../components/navbar'
 import Fin5Dashboard from '../../../assets/fin5_dashboard.jpeg'
 import Fin5DashboardPhone from '../../../assets/fin5_dashboard_phone.jpeg'
 import { Link } from 'react-router-dom'
-import { Footer } from '../../components/footer/index'
+import { Footer } from '@components/footer/Footer'
+import { Navbar } from '@components/navbar/Navbar'
 
-export const LandingPage: FC = () => {
+export const Landing: FC = () => {
   return (
     <main className="flex min-h-screen flex-col bg-secondary-100 overflow-hidden relative">
       <Navbar />

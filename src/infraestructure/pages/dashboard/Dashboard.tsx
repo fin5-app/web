@@ -1,10 +1,12 @@
 import { FC } from 'react'
 import { useDashboardController } from './controller'
-import { WelcomeCard } from './components/welcome-card'
 import { CardsWrapper } from './components/cards-wrapper'
 import LatestTransactions from './components/latest-transactions'
+import { ToastVariant } from '../../constants/toast'
+import { Toast } from '@components/toast/Toast'
+import { WelcomeCard } from './components/welcome-card'
 
-export const DashboardPage: FC = () => {
+export const Dashboard: FC = () => {
   const { user, cash_flow, transactions } = useDashboardController()
   return (
     <div className="max-w-100 flex flex-wrap">
@@ -12,6 +14,7 @@ export const DashboardPage: FC = () => {
         <WelcomeCard user={user} balance={cash_flow?.balance.total_saving} />
         <CardsWrapper data={cash_flow?.balance} />
         <LatestTransactions transactions={transactions?.transactions} />
+        <Toast message="Categoría creada" variant={ToastVariant.SUCCESS} />
       </div>
     </div>
   )

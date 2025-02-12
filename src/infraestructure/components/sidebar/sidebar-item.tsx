@@ -4,8 +4,8 @@ import ChevronDown from '../../../assets/chevron-down.svg'
 import ChevronUp from '../../../assets/chevron-up.svg'
 import './animations.css'
 import { SidebarItemProps } from '../../constants/menu-items'
-import { Text } from '../text'
 import { FontVariant } from '../../constants/fonts'
+import { Text } from '@components/text/Text'
 
 export default function SidebarItem(props: SidebarItemProps) {
   const { name, url, icon, routes } = props

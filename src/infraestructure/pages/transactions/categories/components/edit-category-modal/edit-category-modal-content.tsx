@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { useController } from './controller'
-import { Button } from '../../../../../components/button/index'
 import { Category } from '../../../../../../domain/models/Category'
-import { Text } from '../../../../../components/text'
 import { FontVariant } from '../../../../../constants/fonts'
 import InfoIcon from '../../../../../../assets/info.svg'
+import { Button } from '../../../../../components/button/Button'
+import { Text } from '@components/text/Text'
 
 interface EditModalProps extends Category {}
 

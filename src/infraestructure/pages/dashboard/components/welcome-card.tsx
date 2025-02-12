@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { User } from '../../../../domain/models/User'
 import { formatCurrency } from '../../../utils/currency'
-import { Text } from '../../../components/text'
 import { FontVariant } from '../../../constants/fonts'
+import { Text } from '@components/text/Text'
 
 interface WelcomeCardProps {
   balance?: number
